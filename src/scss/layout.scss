@@ -88,6 +88,10 @@ footer {
 	h3 {
 		margin-top: 5px;
 		margin-bottom: 0;
+		height: 21px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
 	}
 	p {
 		margin-bottom: 0;
