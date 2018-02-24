@@ -30,8 +30,17 @@ export default class Header extends Component {
           path="/user"
           render={() =>
             <header className='header'>
-          	  <h1>个人中心</h1>
-          	</header>
+              <h1>个人中心</h1>
+            </header>
+          }
+        />
+        <Route
+          exact
+          path="/like"
+          render={() =>
+            <header className='header'>
+              <h1>我的收藏</h1>
+            </header>
           }
         />
         <Route

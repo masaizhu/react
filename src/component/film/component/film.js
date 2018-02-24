@@ -68,8 +68,8 @@ export default class Film {
 
   addFilm(e) {
     e.preventDefault();
-    let films = JSON.parse(localStorage.films),
-        newFilm = new FilmItem(this.app.state, (films[films.length-1].id + 1));
+    let films = JSON.parse(localStorage.films);
+    let newFilm = new FilmItem(this.app.state, (films[films.length-1].id + 1));
     films.push(newFilm);
     console.log("films", films);
     this.app.setState({
@@ -79,8 +79,7 @@ export default class Film {
     this.setFilms(films);
     localStorage.films = JSON.stringify(films);
   }
-  handleLike(e) {
-    e.preventDefault();
+  handleLike() {
     let filmId = this.app.state.films[0].id;
     let films = JSON.parse(localStorage.films);
     let filmIndex = films.findIndex(function(ele, i){
@@ -88,6 +87,15 @@ export default class Film {
     });
     films[filmIndex].liked = !films[filmIndex].liked;
     this.setFilms(films, filmId);
+    localStorage.films = JSON.stringify(films);
+  }
+  removeFilm() {
+    let filmId = this.app.state.films[0].id;
+    let films = JSON.parse(localStorage.films);
+    films = films.filter(function(ele, i){
+      return ele.id != filmId;
+    });
+    this.setFilms(films);
     localStorage.films = JSON.stringify(films);
   }
 }

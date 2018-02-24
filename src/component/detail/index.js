@@ -27,9 +27,17 @@ export default class Add extends Component {
               <div className="detail-top">
                 <h2>{film.name}</h2>
                 <i
+                  className="fa fa-trash"
+                  aria-hidden="true"
+                  onClick={() => {
+                    new Film(this).removeFilm()
+                    this.props.history.push('/');
+                  }}>
+                </i>
+                <i
                   className={film.liked ? "fa fa-heart":"fa fa-heart-o"}
                   aria-hidden="true"
-                  onClick={(e) => new Film(this).handleLike(e)}>
+                  onClick={() => new Film(this).handleLike()}>
                 </i>
               </div>
               <h3>导演： {film.director}</h3>

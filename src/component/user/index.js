@@ -41,14 +41,14 @@ export default class User extends Component {
           </div>
           <div className="menu-list">
           	<ul>
+              <li>
+                <Link to="/like">我的收藏</Link>
+              </li>
           	  <li>
           	  	<Link to="/list">最新电影</Link>
           	  </li>
           	  <li>
           	  	<Link to="/add">添加影讯</Link>
-          	  </li>
-          	  <li>
-          	  	<Link to="/like">我的收藏</Link>
           	  </li>
           	  <li>
           	  	<Link to="/list">最新足迹</Link>
